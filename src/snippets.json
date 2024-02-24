@@ -1,0 +1,20 @@
+{
+    "Basic code to read a text file in js": {
+      "prefix": "dotNetReadFile",
+      "body": [
+            "var fs = require('fs'),",
+            "readline = require('readline');",
+            "",
+            "var rd = readline.createInterface({",
+            "input: fs.createReadStream(${1:filepath})",
+            "});",
+            "rd.on('line', function (line) {",
+            "});",
+            "rd.on('close',function () {",
+            "    ",
+            "}",
+            ");"      
+      ],
+      "description": "The basic structure of a file reading in javascript language"
+    }
+}

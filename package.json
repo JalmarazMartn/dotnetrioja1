@@ -2,6 +2,7 @@
 	"name": "dotnetrioja1",
 	"displayName": "DotNetRioja1",
 	"description": "Demo de publicación de extensiones",
+	"publisher": "DotNetRioja",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.86.0"
@@ -32,7 +33,16 @@
 					"command": "dotnetrioja1.CommentBlock"
 				}
 			]
-		}
+		},
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "src/snippets.json"
+			}
+		],
+		"codeActions": [
+			{}
+		]
 	},
 	"scripts": {
 		"lint": "eslint .",
