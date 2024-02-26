@@ -28,7 +28,7 @@
 		"menus": {
 			"editor/context": [
 				{
-					"when": "editorHasSelection",
+					"when": "editorHasSelection && config.dotNetRioja.EnableCommentBlockMenu",
 					"group": "1_modification",
 					"command": "dotnetrioja1.CommentBlock"
 				}
@@ -40,8 +40,16 @@
 				"path": "src/snippets.json"
 			}
 		],
-		"codeActions": [
-			{}
+		"configuration": [
+			{
+				"title": "DotNetRioja settings",
+				"properties": {
+					"dotNetRioja.EnableCommentBlockMenu": {
+						"type": "boolean",
+						"description": "Enable block comment action on context menu."
+					}
+				}
+			}
 		]
 	},
 	"scripts": {
