@@ -12,4 +12,20 @@ suite('Extension Test Suite', () => {
 		assert.strictEqual(-1, [1, 2, 3].indexOf(5));
 		assert.strictEqual(-1, [1, 2, 3].indexOf(0));
 	});
+	test('Write document', async () => {
+		const newText = 'console.log(1);';
+		let doc = await vscode.workspace.openTextDocument();
+		await addTextToDocument(doc, newText,0,0);		
+		const comment = require('./../../src/comment.js');
+		const commentOperator = '//';
+		await comment.commentRangeInDoc(new vscode.Range(new vscode.Position(0,0),new vscode.Position(0,20)),doc);
+		//await comment.commentSelection();
+		assert.strictEqual(commentOperator+newText,doc.lineAt(0).text);
+	})
 });
+async function addTextToDocument(doc, newText,line=0,column=0) {
+	let edit = new vscode.WorkspaceEdit();
+	edit.insert(doc.uri, new vscode.Position(line, column), newText);
+	await vscode.workspace.applyEdit(edit);
+}
+
