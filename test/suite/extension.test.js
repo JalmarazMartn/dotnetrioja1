@@ -18,7 +18,7 @@ suite('Extension Test Suite', () => {
 		await addTextToDocument(doc, newText,0,0);		
 		const comment = require('./../../src/comment.js');
 		const commentOperator = '//';
-		await comment.commentRangeInDoc(new vscode.Range(new vscode.Position(0,0),new vscode.Position(0,20)),doc);
+		await comment.commentRangeInDoc(new vscode.Range(0,0,0,20),doc);
 		//await comment.commentSelection();
 		assert.strictEqual(commentOperator+newText,doc.lineAt(0).text);
 	})
