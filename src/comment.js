@@ -17,7 +17,7 @@ async function commentRangeInDoc(selectionRange, document) {
         let edit = new vscode.WorkspaceEdit();
         const replaceText = '//';
         edit.replace(document.uri, replaceRange, replaceText);
-        await vscode.workspace.applyEdit(edit);
+        await vscode.workspace.applyEdit(edit);//
     }
 }
 
